@@ -1,0 +1,187 @@
+{
+  "checks": [
+    {
+      "check": "inv_archive_member",
+      "observed": "FLAT_INV.txt",
+      "expected": "a non-directory text member whose normalized basename ends with invtxt, currently FLAT_INV.txt",
+      "passed": true
+    },
+    {
+      "check": "rcl_archive_members",
+      "observed": "[('pre2010', 'FLAT_RCL_PRE_2010.txt'), ('post2010', 'FLAT_RCL_POST_2010.txt')]",
+      "expected": "one RCL text member from each recall archive; current members include FLAT_RCL_PRE_2010.txt and FLAT_RCL_POST_2010.txt, selected by normalized basename containing rcl and ending txt",
+      "passed": true
+    },
+    {
+      "check": "inv_field_width",
+      "observed": "{11: 154460}",
+      "expected": "at least 9 tab-delimited fields for CAMPNO",
+      "passed": true
+    },
+    {
+      "check": "rcl_field_width",
+      "observed": "{29: 328883, 36: 1}",
+      "expected": "at least 16 tab-delimited fields for RCDATE",
+      "passed": true
+    },
+    {
+      "check": "pe_actions_observed",
+      "observed": "1153",
+      "expected": "at least one PE action number with a valid population line",
+      "passed": true
+    },
+    {
+      "check": "rcl_campaign_values",
+      "observed": "328884",
+      "expected": "at least one non-empty RCL campaign identifier",
+      "passed": true
+    },
+    {
+      "check": "rcl_recall_dates_parsed",
+      "observed": "328884",
+      "expected": "at least one parseable RCDATE linked to a campaign",
+      "passed": true
+    },
+    {
+      "check": "year_9999_excluded",
+      "observed": "437",
+      "expected": "counted and excluded under the frozen population; non-abortive coverage evidence",
+      "passed": true
+    },
+    {
+      "check": "included_rows",
+      "observed": "1153",
+      "expected": "nonempty constructed rows",
+      "passed": true
+    },
+    {
+      "check": "unique_investigation_ids",
+      "observed": "0",
+      "expected": "0 repeated investigation_id values after collapsing to one row per PE action number",
+      "passed": true
+    },
+    {
+      "check": "one_row_per_action",
+      "observed": "1153",
+      "expected": "one constructed row per valid PE action number, expected 1153",
+      "passed": true
+    },
+    {
+      "check": "multi_odate_actions",
+      "observed": "0",
+      "expected": "0 action numbers with conflicting ODATE values; the earliest ODATE is used when conflicts exist",
+      "passed": true
+    },
+    {
+      "check": "years_included",
+      "observed": "(1981, 2018)",
+      "expected": "all model_year values within 1900 through 2019",
+      "passed": true
+    },
+    {
+      "check": "make_model_nonempty",
+      "observed": "0",
+      "expected": "0 empty make or model values",
+      "passed": true
+    },
+    {
+      "check": "model_count_positive",
+      "observed": "1",
+      "expected": "all model_count values at least 1",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "campaign_join_key",
+      "observed": "30441",
+      "expected": "at least one RCL campaign key with a parseable RCDATE",
+      "passed": true
+    },
+    {
+      "check": "unmatched_campno_rows",
+      "observed": "1",
+      "expected": "missing-coverage count is a subset of constructed rows; the frozen label rule assigns 0 when no linked recall falls in the 730-day window",
+      "passed": true
+    },
+    {
+      "check": "campno_present_rows",
+      "observed": "447",
+      "expected": "number of constructed rows carrying a non-empty CAMPNO label-source value",
+      "passed": true
+    },
+    {
+      "check": "target_binary",
+      "observed": "[0, 1]",
+      "expected": "subset of 0 and 1",
+      "passed": true
+    },
+    {
+      "check": "split_nonempty_train",
+      "observed": "758",
+      "expected": "at least one row",
+      "passed": true
+    },
+    {
+      "check": "split_bounds_train",
+      "observed": "('1995-01-03', '2007-12-17')",
+      "expected": "half-open window None to 2008-01-01",
+      "passed": true
+    },
+    {
+      "check": "split_nonempty_eval",
+      "observed": "307",
+      "expected": "at least one row",
+      "passed": true
+    },
+    {
+      "check": "split_bounds_eval",
+      "observed": "('2008-01-08', '2014-11-21')",
+      "expected": "half-open window 2008-01-01 to 2015-01-01",
+      "passed": true
+    },
+    {
+      "check": "split_nonempty_holdout",
+      "observed": "88",
+      "expected": "at least one row",
+      "passed": true
+    },
+    {
+      "check": "split_bounds_holdout",
+      "observed": "('2015-01-12', '2019-12-12')",
+      "expected": "half-open window 2015-01-01 to None",
+      "passed": true
+    },
+    {
+      "check": "unit_outcome_horizon",
+      "observed": "730 calendar days",
+      "expected": "24-month horizon used in the label comparison",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "unit_vehicle_age",
+      "observed": "integer years",
+      "expected": "open calendar year minus representative model year",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "columns_train",
+      "observed": "['investigation_id', 'make', 'model', 'model_year', 'component', 'manufacturer', 'model_count', 'vehicle_age', 'open_date', 'recall_24m']",
+      "expected": "['investigation_id', 'make', 'model', 'model_year', 'component', 'manufacturer', 'model_count', 'vehicle_age', 'open_date', 'recall_24m']",
+      "passed": true
+    },
+    {
+      "check": "columns_eval",
+      "observed": "['investigation_id', 'make', 'model', 'model_year', 'component', 'manufacturer', 'model_count', 'vehicle_age', 'open_date', 'recall_24m']",
+      "expected": "['investigation_id', 'make', 'model', 'model_year', 'component', 'manufacturer', 'model_count', 'vehicle_age', 'open_date', 'recall_24m']",
+      "passed": true
+    },
+    {
+      "check": "columns_holdout",
+      "observed": "['investigation_id', 'make', 'model', 'model_year', 'component', 'manufacturer', 'model_count', 'vehicle_age', 'open_date', 'recall_24m']",
+      "expected": "['investigation_id', 'make', 'model', 'model_year', 'component', 'manufacturer', 'model_count', 'vehicle_age', 'open_date', 'recall_24m']",
+      "passed": true
+    }
+  ]
+}

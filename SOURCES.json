@@ -1,0 +1,37 @@
+{
+  "publisher-terms.snapshot": {
+    "url": "https://resources.data.gov/open-licenses/",
+    "bytes": 32338,
+    "sha256": "b6d7a4aa7141c92574566804f96621c59783744ff80472d82d7ee1e13421e27f",
+    "retrieved_at_unix": 1794262691.8904974,
+    "transport_attempts": 1
+  },
+  "publisher-documentation.snapshot": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+    "bytes": 2057,
+    "sha256": "04d3eef957004ff6d235ffbefe1ab270be27b72c1671ca5c3e8cfa96951bf8d2",
+    "retrieved_at_unix": 1794262692.1431565,
+    "transport_attempts": 1
+  },
+  "FLAT_INV.zip": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/inv/FLAT_INV.zip",
+    "bytes": 4303154,
+    "sha256": "1b82b60566e4607e2287f93a02bcb983e5876510a8ad7039116ed51956e54332",
+    "retrieved_at_unix": 1794262692.984049,
+    "transport_attempts": 1
+  },
+  "FLAT_RCL_PRE_2010.zip": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_PRE_2010.zip",
+    "bytes": 7455553,
+    "sha256": "2e0683afb5b9d140c33fcbdc0d7cb03955b80701fd7bbc59d2b84786c4816066",
+    "retrieved_at_unix": 1794262693.4999316,
+    "transport_attempts": 1
+  },
+  "FLAT_RCL_POST_2010.zip": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_POST_2010.zip",
+    "bytes": 14995295,
+    "sha256": "5a9b259508ed33610529d2669bf25b501c69d990a82853e949c2c305792e2e68",
+    "retrieved_at_unix": 1794262694.0016925,
+    "transport_attempts": 1
+  }
+}

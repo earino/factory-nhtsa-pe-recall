@@ -1,0 +1,46 @@
+{
+  "name": "nhtsa-pe-recall",
+  "description": "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
+  "target": "recall_24m",
+  "positive_label": 1,
+  "id_columns": [
+    "investigation_id"
+  ],
+  "columns": [
+    "investigation_id",
+    "make",
+    "model",
+    "model_year",
+    "component",
+    "manufacturer",
+    "model_count",
+    "vehicle_age",
+    "open_date",
+    "recall_24m"
+  ],
+  "rows": {
+    "train": 758,
+    "eval": 307,
+    "holdout": 88
+  },
+  "positive_rate": {
+    "train": 0.3258575197889182,
+    "eval": 0.495114006514658,
+    "holdout": 0.4772727272727273
+  },
+  "split": {
+    "eval": {
+      "end": "2015-01-01T00:00:00.000",
+      "start": "2008-01-01T00:00:00.000"
+    },
+    "holdout": {
+      "end": null,
+      "start": "2015-01-01T00:00:00.000"
+    },
+    "train": {
+      "end": "2008-01-01T00:00:00.000",
+      "start": null
+    }
+  },
+  "split_description": "Chronological by ODATE: train 1995-01-01 to 2007-12-31; eval 2008-01-01 to 2014-12-31; holdout 2015-01-01 to 2019-12-31. No embargo; each row is a distinct PE and no feature uses another row's outcome. All 24-month label windows close by 2021-12-31, before the 2026 snapshot."
+}

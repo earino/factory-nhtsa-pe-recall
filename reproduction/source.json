@@ -1,0 +1,127 @@
+{
+  "construction": {
+    "access_recipe": "Download and unzip FLAT_INV.zip; its text member is FLAT_INV.txt. Parse that member as tab-delimited quoted text with Python csv.reader using a tab delimiter and standard quote handling; map fields 1-11; keep field 1 action numbers starting with PE, field 2 MAKE, field 3 MODEL, field 4 YEAR, field 5 COMPNAME, field 6 MFR_NAME, field 7 ODATE; exclude fields 8 CDATE, 9 CAMPNO, and 11 SUMMARY from features. Download and unzip FLAT_RCL_PRE_2010.zip and FLAT_RCL_POST_2010.zip; the current text members are FLAT_RCL_PRE_2010.txt and FLAT_RCL_POST_2010.txt. Select any non-directory text member whose normalized basename contains rcl rather than requiring a literal RCL.txt. Parse the RCL text member, keep field 2 CAMPNO and field 16 RCDATE. Strip whitespace and uppercase campaign IDs; join on CAMPNO; label 1 when the matched RCDATE is after ODATE and on or before ODATE+730 days. Write one row per PE.",
+    "expected_size": "FLAT_INV.zip is 4 MB; the live Socrata view has 4,056 investigations, 2,331 of them PE; the 1995-2019 filtered cohort is estimated at 900-1,300 rows; final CSVs under 2 MB.",
+    "format": "Three CSVs (train.csv, eval.csv, holdout.csv) with identical columns: investigation_id, make, model, model_year, component, manufacturer, model_count, vehicle_age, open_date, label.",
+    "source_examples": "INV.txt field 1 action numbers in the live data include PE06011 and PE23015; field 4 uses 9999 for unknown; field 7 is YYYYMMDD; field 9 is a CHAR(9) recall campaign number. RCL.txt field 2 is CAMPNO and field 16 is RCDATE."
+  },
+  "dataset_id": "nhtsa-pe-recall",
+  "evidence": [
+    {
+      "claim": "NHTSA publishes the investigation dataset and designates it Public Domain U.S. Government.",
+      "quote": "Public Domain U.S. Government",
+      "url": "https://data.transportation.gov/Automobiles/Investigations-Data/b3rp-be92"
+    },
+    {
+      "claim": "The investigation file defines the opening date and the recall campaign link used for the label.",
+      "quote": "The CAMPNO field (NHTSA Recall Campaign Number), if present, identifies the recall campaign initiated as a result of the investigation.",
+      "url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt"
+    },
+    {
+      "claim": "ODATE is the date the investigation opened.",
+      "quote": "Date Opened (YYYYMMDD)",
+      "url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt"
+    },
+    {
+      "claim": "NHTSA provides the investigation flat file as a direct ZIP download.",
+      "quote": "Select the .zip file for the desired database to download and extract the data.",
+      "url": "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+    },
+    {
+      "claim": "Federal policy states that works created by government employees in the scope of employment are not subject to domestic copyright under 17 U.S.C. \u00a7 105.",
+      "quote": "Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection under 17 U.S.C. \u00a7 105.",
+      "url": "https://resources.data.gov/open-licenses/"
+    },
+    {
+      "claim": "The statute denies copyright protection to U.S. government works.",
+      "quote": "Copyright protection under this title is not available for any work of the United States Government",
+      "url": "https://uscode.house.gov/us/usc/t17/s105/"
+    },
+    {
+      "claim": "U.S. government work status is territorial and does not establish a worldwide dedication.",
+      "quote": "U.S. copyright laws may not protect U.S. government works outside the country.",
+      "url": "https://www.usa.gov/government-copyright"
+    }
+  ],
+  "limitations": [
+    "Current-vintage retrospective snapshot: the 2026 ODI file may reflect later corrections and does not prove the fields were operationally available in real time during 1995-2019.",
+    "CAMPNO attribution is imperfect: one recall may be linked to multiple PEs or models, and a PE may be followed by an EA; using PE only reduces but does not eliminate shared-event dependence.",
+    "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0, which can understate escalation.",
+    "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. \u00a7 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+    "No production or sales exposure; recall propensity is not normalized by fleet size.",
+    "YEAR=9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped."
+  ],
+  "reason": "NHTSA's ODI preliminary-evaluation file is a directly downloadable, documented federal event table with a future binary outcome (recall linkage), one row per opening, and no account requirement; fixed chronological splits are feasible without panel or lag leakage.",
+  "source": {
+    "attribution": "National Highway Traffic Safety Administration",
+    "citation": "",
+    "documentation_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+    "license": "Public Domain U.S. Government",
+    "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+    "redistribution": true,
+    "terms_excerpt": "Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection under 17 U.S.C. \u00a7 105.",
+    "terms_url": "https://resources.data.gov/open-licenses/",
+    "urls": [
+      "https://static.nhtsa.gov/odi/ffdd/inv/FLAT_INV.zip",
+      "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_PRE_2010.zip",
+      "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_POST_2010.zip"
+    ]
+  },
+  "task": {
+    "decision_user": "NHTSA Office of Defects Investigation manager allocating investigative resources at PE opening.",
+    "features": [
+      {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MAKE.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Vehicle make from the deterministic representative line of the PE (INV.txt field 2 MAKE).",
+        "name": "make"
+      },
+      {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MODEL; the field may contain a list.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Vehicle model or model list from the deterministic representative line of the PE (INV.txt field 3 MODEL).",
+        "name": "model"
+      },
+      {
+        "availability": "Present as YEAR on the opening record; 9999 is unknown and excluded; values 1900 through 2019 retained. When an action number spans multiple lines, the lexicographically first valid line supplies YEAR.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Model year of the representative vehicle line under investigation (INV.txt field 4 YEAR).",
+        "name": "model_year"
+      },
+      {
+        "availability": "Present as COMPNAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies COMPNAME.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Component or system description from the deterministic representative line (INV.txt field 5 COMPNAME).",
+        "name": "component"
+      },
+      {
+        "availability": "Present as MFR_NAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies MFR_NAME.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Manufacturer from the deterministic representative line of the PE (INV.txt field 6 MFR_NAME).",
+        "name": "manufacturer"
+      },
+      {
+        "availability": "Derived from MODEL across all valid lines of the PE; distinct non-empty names are split on comma or semicolon; delimiter interpretation is assumed.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Number of distinct model names across the PE make/model lines, a proxy for the breadth of the PE.",
+        "name": "model_count"
+      },
+      {
+        "availability": "Derived only from ODATE and the representative line YEAR at opening; negative ages are not clipped.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Open year minus the representative model year, a proxy for vehicle age at the probe.",
+        "name": "vehicle_age"
+      }
+    ],
+    "outcome_horizon": "24 months (730 days) from ODATE.",
+    "population": "PE investigations opened 1995-01-01 through 2019-12-31 with a parseable ODATE, non-empty MAKE and MODEL on at least one make/model line, and YEAR from 1900 through 2019; multiple lines sharing an action number are collapsed to one row per action number using the lexicographically first valid line and a model count across lines; excludes YEAR 9999 equipment, tire, and child-restraint records and rows without a parseable ODATE.",
+    "prediction_time": "The PE open date (ODATE), before investigation findings, closure, or a recall campaign number are known.",
+    "question": "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
+    "simple_references": "Majority class; manufacturer base rate; component base rate; model-year age-only; open-year base rate.",
+    "split_policy": "Chronological by ODATE: train 1995-01-01 to 2007-12-31; eval 2008-01-01 to 2014-12-31; holdout 2015-01-01 to 2019-12-31. No embargo; each row is a distinct PE and no feature uses another row's outcome. All 24-month label windows close by 2021-12-31, before the 2026 snapshot.",
+    "target": "1 if the PE record's CAMPNO is non-empty and the linked recall's RCDATE is after ODATE and on or before ODATE + 730 days; 0 otherwise. CAMPNO, CDATE, status, and recall records are label-only and excluded from features.",
+    "usefulness": "At opening, the recall outcome is unknown and CAMPNO is absent; the model must combine component, manufacturer, model-year, and probe breadth to forecast regulatory escalation. This supports triage and is not a copied field."
+  },
+  "title": "Will a newly opened NHTSA preliminary evaluation produce a safety recall within 24 months?",
+  "verdict": "ready"
+}

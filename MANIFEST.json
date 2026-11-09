@@ -1,0 +1,344 @@
+{
+  "schema": "factory-1",
+  "dataset": "nhtsa-pe-recall",
+  "version": "v-76d064ad7e164c41",
+  "artifact_version": "7119c52b6fe5171677a06aebffca01b29a9960e1d0534755b8126137bbcf82ef",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "sha256": "ce4e625ff789cb84be0402e7a8aa885defd9099c7417dc6fecd33cbc2ea7459d",
+      "bytes": 675,
+      "asset_name": "LICENSE-EVIDENCE.json"
+    },
+    "LICENSE.md": {
+      "sha256": "4c4b6f7c8022255c051abf7db10cd6d13066aff62fd190e2cb7c2c282a3707d9",
+      "bytes": 866,
+      "asset_name": "LICENSE.md"
+    },
+    "README.md": {
+      "sha256": "93a9b83cba91b0a3b4fe56f0a3c82ac3ecb56064d5f4fa4cd6e91a2910274c02",
+      "bytes": 4233,
+      "asset_name": "README.md"
+    },
+    "SOURCES.json": {
+      "sha256": "d2c9fc9b1d11613d4d0620e5b8d6952fa19f1c2d5a17dc314f2dd1ce2cddb0f4",
+      "bytes": 1389,
+      "asset_name": "SOURCES.json"
+    },
+    "evaluation.json": {
+      "sha256": "ed8fcb37b383323a347701eb232df52f46bf2bfba5fdc1159b3c64c89015d3b2",
+      "bytes": 3972,
+      "asset_name": "evaluation.json"
+    },
+    "extract/meta.json": {
+      "sha256": "c068d9fdb21af3d22b0bce6ae815d57a3e5788afed90c942202e905180ca0f5b",
+      "bytes": 1260,
+      "asset_name": "extract__meta.json"
+    },
+    "extract/private/holdout.csv": {
+      "sha256": "93ca7bfbf095099c642d34471eda0be742b7f928eed74d080be6e5429ffc804d",
+      "bytes": 8107,
+      "asset_name": "extract__private__holdout.csv"
+    },
+    "extract/public/eval.csv": {
+      "sha256": "fdf29ddc574057c2d14efe13c4f62dc67a151cb339452f1888467d40e96860ca",
+      "bytes": 30634,
+      "asset_name": "extract__public__eval.csv"
+    },
+    "extract/public/train.csv": {
+      "sha256": "02390d2b80d997e73b1e1e258e8c2f72d52df06fc7c31ca0d60ce916e2f00970",
+      "bytes": 71583,
+      "asset_name": "extract__public__train.csv"
+    },
+    "extract/quality.json": {
+      "sha256": "e0f9b8fbed4591387fff37f3a397df4783fc3c347bbde700f263b282cdd38479",
+      "bytes": 17759,
+      "asset_name": "extract__quality.json"
+    },
+    "get_dataset.py": {
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48",
+      "bytes": 3680,
+      "asset_name": "get_dataset.py"
+    },
+    "qualification.json": {
+      "sha256": "77a52242a6ce43fdc44b125b536e8afd53182223836b20da848be34ea7f1dc38",
+      "bytes": 18901,
+      "asset_name": "qualification.json"
+    },
+    "reproduction/LICENSE-CC0-1.0.txt": {
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048,
+      "asset_name": "reproduction__LICENSE-CC0-1.0.txt"
+    },
+    "reproduction/LICENSE-MIT.txt": {
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c",
+      "bytes": 1124,
+      "asset_name": "reproduction__LICENSE-MIT.txt"
+    },
+    "reproduction/artifact_scrub.py": {
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68",
+      "bytes": 11369,
+      "asset_name": "reproduction__artifact_scrub.py"
+    },
+    "reproduction/build.py": {
+      "sha256": "d662fc58fa051edd80cf641a9a76933bca875ac4b5e0dadef76a386394b26948",
+      "bytes": 15122,
+      "asset_name": "reproduction__build.py"
+    },
+    "reproduction/construction.json": {
+      "sha256": "b51ddfbe87d13a30aabf7a515b7bf1c27e1130cc65a3d55108a04613b19cd003",
+      "bytes": 17474,
+      "asset_name": "reproduction__construction.json"
+    },
+    "reproduction/dataset_package.py": {
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327",
+      "bytes": 7927,
+      "asset_name": "reproduction__dataset_package.py"
+    },
+    "reproduction/dataset_run.py": {
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57",
+      "bytes": 12381,
+      "asset_name": "reproduction__dataset_run.py"
+    },
+    "reproduction/get_dataset.py": {
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48",
+      "bytes": 3680,
+      "asset_name": "reproduction__get_dataset.py"
+    },
+    "reproduction/leakage_battery.py": {
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3",
+      "bytes": 17379,
+      "asset_name": "reproduction__leakage_battery.py"
+    },
+    "reproduction/provenance.json": {
+      "sha256": "768bebe8c4b2a024625465fb8453c587e61691707251168963ed7f1851a9b476",
+      "bytes": 573,
+      "asset_name": "reproduction__provenance.json"
+    },
+    "reproduction/qualify_dataset.py": {
+      "sha256": "bff6d43d0904182e2612c32bab702e41addbf389904a236c209e78be39e37a6b",
+      "bytes": 66067,
+      "asset_name": "reproduction__qualify_dataset.py"
+    },
+    "reproduction/recovery_recipes.py": {
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e",
+      "bytes": 17609,
+      "asset_name": "reproduction__recovery_recipes.py"
+    },
+    "reproduction/requirements.txt": {
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0",
+      "bytes": 160,
+      "asset_name": "reproduction__requirements.txt"
+    },
+    "reproduction/source.json": {
+      "sha256": "c0896d7594b232d2b61be922e6b223491fcaf6ee497892faa80c4ab299b5be46",
+      "bytes": 10751,
+      "asset_name": "reproduction__source.json"
+    },
+    "reproduction/source_io.py": {
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3",
+      "bytes": 5607,
+      "asset_name": "reproduction__source_io.py"
+    },
+    "reproduction/train.py": {
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8",
+      "bytes": 2500,
+      "asset_name": "reproduction__train.py"
+    },
+    "reproduction/validate.py": {
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b",
+      "bytes": 1277,
+      "asset_name": "reproduction__validate.py"
+    },
+    "reproduction/validate.sh": {
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d",
+      "bytes": 482,
+      "asset_name": "reproduction__validate.sh"
+    },
+    "source-checks.json": {
+      "sha256": "9bbc899c1a888b3be261299c2140eca0f7bc8073c1cb6951fc90314cc0ea61f1",
+      "bytes": 6154,
+      "asset_name": "source-checks.json"
+    },
+    "source-snapshot.tar.gz": {
+      "sha256": "c00bb26d6f46694d6e396bb44a4cb1bcb80bffcdc6d53f02575ce6e1751035f4",
+      "bytes": 23689483,
+      "asset_name": "source-snapshot.tar.gz"
+    },
+    "verify_dataset.py": {
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834",
+      "bytes": 1276,
+      "asset_name": "verify_dataset.py"
+    }
+  },
+  "source": {
+    "attribution": "National Highway Traffic Safety Administration",
+    "citation": "",
+    "documentation_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+    "license": "Public Domain U.S. Government",
+    "publisher": "National Highway Traffic Safety Administration (NHTSA)",
+    "redistribution": true,
+    "terms_excerpt": "Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection under 17 U.S.C. \u00a7 105.",
+    "terms_url": "https://resources.data.gov/open-licenses/",
+    "urls": [
+      "https://static.nhtsa.gov/odi/ffdd/inv/FLAT_INV.zip",
+      "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_PRE_2010.zip",
+      "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_POST_2010.zip"
+    ]
+  },
+  "task": {
+    "decision_user": "NHTSA Office of Defects Investigation manager allocating investigative resources at PE opening.",
+    "features": [
+      {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MAKE.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Vehicle make from the deterministic representative line of the PE (INV.txt field 2 MAKE).",
+        "name": "make"
+      },
+      {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MODEL; the field may contain a list.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Vehicle model or model list from the deterministic representative line of the PE (INV.txt field 3 MODEL).",
+        "name": "model"
+      },
+      {
+        "availability": "Present as YEAR on the opening record; 9999 is unknown and excluded; values 1900 through 2019 retained. When an action number spans multiple lines, the lexicographically first valid line supplies YEAR.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Model year of the representative vehicle line under investigation (INV.txt field 4 YEAR).",
+        "name": "model_year"
+      },
+      {
+        "availability": "Present as COMPNAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies COMPNAME.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Component or system description from the deterministic representative line (INV.txt field 5 COMPNAME).",
+        "name": "component"
+      },
+      {
+        "availability": "Present as MFR_NAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies MFR_NAME.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Manufacturer from the deterministic representative line of the PE (INV.txt field 6 MFR_NAME).",
+        "name": "manufacturer"
+      },
+      {
+        "availability": "Derived from MODEL across all valid lines of the PE; distinct non-empty names are split on comma or semicolon; delimiter interpretation is assumed.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Number of distinct model names across the PE make/model lines, a proxy for the breadth of the PE.",
+        "name": "model_count"
+      },
+      {
+        "availability": "Derived only from ODATE and the representative line YEAR at opening; negative ages are not clipped.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Open year minus the representative model year, a proxy for vehicle age at the probe.",
+        "name": "vehicle_age"
+      }
+    ],
+    "outcome_horizon": "24 months (730 days) from ODATE.",
+    "population": "PE investigations opened 1995-01-01 through 2019-12-31 with a parseable ODATE, non-empty MAKE and MODEL on at least one make/model line, and YEAR from 1900 through 2019; multiple lines sharing an action number are collapsed to one row per action number using the lexicographically first valid line and a model count across lines; excludes YEAR 9999 equipment, tire, and child-restraint records and rows without a parseable ODATE.",
+    "prediction_time": "The PE open date (ODATE), before investigation findings, closure, or a recall campaign number are known.",
+    "question": "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
+    "simple_references": "Majority class; manufacturer base rate; component base rate; model-year age-only; open-year base rate.",
+    "split_policy": "Chronological by ODATE: train 1995-01-01 to 2007-12-31; eval 2008-01-01 to 2014-12-31; holdout 2015-01-01 to 2019-12-31. No embargo; each row is a distinct PE and no feature uses another row's outcome. All 24-month label windows close by 2021-12-31, before the 2026 snapshot.",
+    "target": "1 if the PE record's CAMPNO is non-empty and the linked recall's RCDATE is after ODATE and on or before ODATE + 730 days; 0 otherwise. CAMPNO, CDATE, status, and recall records are label-only and excluded from features.",
+    "usefulness": "At opening, the recall outcome is unknown and CAMPNO is absent; the model must combine component, manufacturer, model-year, and probe breadth to forecast regulatory escalation. This supports triage and is not a copied field."
+  },
+  "rows": {
+    "train": 758,
+    "eval": 307,
+    "holdout": 88
+  },
+  "evaluation_contract": {
+    "access": "isolated_rows",
+    "cross_row_audit": {
+      "auxiliary_files_review": "Only public/train.csv, public/eval.csv, and private/holdout.csv are written; no fixture labels, answer scaffolds, or auxiliary evaluation files.",
+      "probes": [],
+      "rationale": "Rows are one per PE action number; features are confined to the opening investigation record lines and no label-derived group rates or cross-row outcomes are shipped. The high-cardinality declarations are metadata about shipped columns, not per-row outcome aggregates."
+    },
+    "feature_evidence": {
+      "component": {
+        "availability": "Present as COMPNAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies COMPNAME.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 5 COMPNAME, representative line)",
+        "status": "verified"
+      },
+      "investigation_id": {
+        "availability": "NHTSA action number from field 1; exactly one shipped row per action number after collapsing the make/model lines for a PE; PE prefix is the population filter.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 1 NHTSA ACTION NUMBER)",
+        "status": "verified"
+      },
+      "make": {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MAKE.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 2 MAKE, representative line)",
+        "status": "verified"
+      },
+      "manufacturer": {
+        "availability": "Present as MFR_NAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies MFR_NAME.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 6 MFR_NAME, representative line)",
+        "status": "verified"
+      },
+      "model": {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MODEL; the field may contain a list.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 3 MODEL, representative line)",
+        "status": "verified"
+      },
+      "model_count": {
+        "availability": "Derived from MODEL across all valid lines of the PE; distinct non-empty names are split on comma or semicolon; delimiter interpretation is assumed.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 3 MODEL across the PE lines, derived)",
+        "status": "assumed"
+      },
+      "model_year": {
+        "availability": "Present as YEAR on the opening record; 9999 is unknown and excluded; values 1900 through 2019 retained. When an action number spans multiple lines, the lexicographically first valid line supplies YEAR.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 4 YEAR, representative line)",
+        "status": "verified"
+      },
+      "open_date": {
+        "availability": "ODATE field 7; event date used for chronological splits and conservative day clusters.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 7 ODATE)",
+        "status": "verified"
+      },
+      "vehicle_age": {
+        "availability": "Derived only from ODATE and the representative line YEAR at opening; negative ages are not clipped.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (fields 7 ODATE and 4 YEAR, derived)",
+        "status": "assumed"
+      }
+    },
+    "limitations": [
+      "Current-vintage retrospective snapshot: the 2026 ODI file may reflect later corrections and does not prove the fields were operationally available in real time during 1995-2019.",
+      "Multiple make/model lines sharing one NHTSA action number are collapsed to one row per PE; the deterministic representative line discards within-PE variation in make, model, model year, component, and manufacturer.",
+      "CAMPNO attribution is imperfect: one recall may be linked to multiple PEs or models, and a PE may be followed by an EA; using PE only reduces but does not eliminate shared-event dependence.",
+      "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0 under the frozen rule, which can understate escalation.",
+      "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+      "No production or sales exposure; recall propensity is not normalized by fleet size.",
+      "YEAR 9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped.",
+      "MODEL delimiter interpretation is assumed; if the source uses a different list separator, model_count may undercount or overcount.",
+      "No full-row availability ledger exists, so training_label_timing is unverified and feature availability is documented-field evidence plus explicit assumptions."
+    ],
+    "selection": {
+      "evidence": "ODATE is the PE open date; MAKE, MODEL, YEAR, COMPNAME, and MFR_NAME are opening-record fields. Multiple make/model lines for one action number are collapsed to a single PE row; the snapshot is retrospective and does not prove real-time availability.",
+      "kind": "prediction_time",
+      "rule": "Keep action numbers beginning with PE; parse ODATE as YYYYMMDD; keep 1995-01-01 through 2019-12-31; require non-empty MAKE and MODEL on at least one line; require YEAR 1900 through 2019; drop YEAR 9999 and unparseable ODATE; collapse remaining lines to one row per action number. Labels are not used for row selection."
+    },
+    "training_label_timing": "unverified",
+    "use": "retrospective_research",
+    "vintage": {
+      "evidence": "2026 NHTSA ODI flat files; later corrections may be reflected.",
+      "kind": "current_snapshot"
+    }
+  },
+  "limitations": [
+    "Current-vintage retrospective snapshot: the 2026 ODI file may reflect later corrections and does not prove the fields were operationally available in real time during 1995-2019.",
+    "CAMPNO attribution is imperfect: one recall may be linked to multiple PEs or models, and a PE may be followed by an EA; using PE only reduces but does not eliminate shared-event dependence.",
+    "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0, which can understate escalation.",
+    "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. \u00a7 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+    "No production or sales exposure; recall propensity is not normalized by fleet size.",
+    "YEAR=9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped.",
+    "Multiple make/model lines sharing one NHTSA action number are collapsed to one row per PE; the deterministic representative line discards within-PE variation in make, model, model year, component, and manufacturer.",
+    "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0 under the frozen rule, which can understate escalation.",
+    "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+    "YEAR 9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped.",
+    "MODEL delimiter interpretation is assumed; if the source uses a different list separator, model_count may undercount or overcount.",
+    "No full-row availability ledger exists, so training_label_timing is unverified and feature availability is documented-field evidence plus explicit assumptions.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "qualification": {
+    "gate_version": "1.6.1",
+    "ok": true
+  }
+}

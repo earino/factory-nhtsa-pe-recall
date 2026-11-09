@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "terms_url": "https://resources.data.gov/open-licenses/",
+  "terms_sha256": "b6d7a4aa7141c92574566804f96621c59783744ff80472d82d7ee1e13421e27f",
+  "documentation_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+  "documentation_sha256": "04d3eef957004ff6d235ffbefe1ab270be27b72c1671ca5c3e8cfa96951bf8d2",
+  "quoted_excerpt": "Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection under 17 U.S.C. \u00a7 105.",
+  "excerpt_found": true,
+  "excerpt_match": "contiguous",
+  "scope": "Captured publisher bytes and quote presence; semantic applicability reviewed separately"
+}

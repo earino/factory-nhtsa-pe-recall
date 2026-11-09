@@ -1,0 +1,157 @@
+{
+  "protocol": "Existing unmodified runner baseline on public validation only; no holdout scoring",
+  "rows": 307,
+  "metrics": {
+    "full_model": {
+      "auc": 0.6195033955857386,
+      "brier": 0.25882025409720283
+    },
+    "majority_prior": {
+      "auc": 0.5,
+      "brier": 0.27862388536640176
+    },
+    "calendar_identity": {
+      "auc": 0.5046264855687607,
+      "brier": 0.28067643525720437
+    }
+  },
+  "by_year": {
+    "2008": {
+      "rows": 64,
+      "positive_rate": 0.375,
+      "metrics": {
+        "full_model": {
+          "auc": 0.7145833333333333,
+          "brier": 0.2070312504820676
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.23678998336129659
+        },
+        "calendar_identity": {
+          "auc": 0.646875,
+          "brier": 0.2297298997291758
+        }
+      }
+    },
+    "2009": {
+      "rows": 53,
+      "positive_rate": 0.6037735849056604,
+      "metrics": {
+        "full_model": {
+          "auc": 0.5238095238095238,
+          "brier": 0.29608237095401657
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.31646838232580093
+        },
+        "calendar_identity": {
+          "auc": 0.43898809523809523,
+          "brier": 0.3227264818015672
+        }
+      }
+    },
+    "2010": {
+      "rows": 49,
+      "positive_rate": 0.46938775510204084,
+      "metrics": {
+        "full_model": {
+          "auc": 0.7157190635451505,
+          "brier": 0.2237635146202425
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.2696638189113477
+        },
+        "calendar_identity": {
+          "auc": 0.5568561872909699,
+          "brier": 0.26484336057701685
+        }
+      }
+    },
+    "2011": {
+      "rows": 38,
+      "positive_rate": 0.5526315789473685,
+      "metrics": {
+        "full_model": {
+          "auc": 0.6428571428571428,
+          "brier": 0.25868100896073887
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.2986563908047072
+        },
+        "calendar_identity": {
+          "auc": 0.3669467787114846,
+          "brier": 0.31622719733305593
+        }
+      }
+    },
+    "2012": {
+      "rows": 34,
+      "positive_rate": 0.5,
+      "metrics": {
+        "full_model": {
+          "auc": 0.5484429065743945,
+          "brier": 0.29661056365629046
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.28032560341406704
+        },
+        "calendar_identity": {
+          "auc": 0.4826989619377163,
+          "brier": 0.28845944977104393
+        }
+      }
+    },
+    "2013": {
+      "rows": 37,
+      "positive_rate": 0.5945945945945946,
+      "metrics": {
+        "full_model": {
+          "auc": 0.5787878787878789,
+          "brier": 0.2745528105999558
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.31327147804859595
+        },
+        "calendar_identity": {
+          "auc": 0.5272727272727273,
+          "brier": 0.3108452304499436
+        }
+      }
+    },
+    "2014": {
+      "rows": 32,
+      "positive_rate": 0.40625,
+      "metrics": {
+        "full_model": {
+          "auc": 0.46153846153846156,
+          "brier": 0.29618589384418337
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.2476738883744892
+        },
+        "calendar_identity": {
+          "auc": 0.4352226720647773,
+          "brier": 0.2517998600005648
+        }
+      }
+    }
+  },
+  "majority_accuracy": 0.504885993485342,
+  "calendar_identity_unseen_rows": 0,
+  "persistence": "Not applicable; see construction notes",
+  "limitations": [
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "runner_files": {
+    "train.py": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8",
+    "validate.py": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b",
+    "validate.sh": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+  }
+}

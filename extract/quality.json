@@ -1,0 +1,370 @@
+{
+  "carry_columns": [
+    "open_date"
+  ],
+  "evaluation_contract": {
+    "access": "isolated_rows",
+    "cross_row_audit": {
+      "auxiliary_files_review": "Only public/train.csv, public/eval.csv, and private/holdout.csv are written; no fixture labels, answer scaffolds, or auxiliary evaluation files.",
+      "probes": [],
+      "rationale": "Rows are one per PE action number; features are confined to the opening investigation record lines and no label-derived group rates or cross-row outcomes are shipped. The high-cardinality declarations are metadata about shipped columns, not per-row outcome aggregates."
+    },
+    "feature_evidence": {
+      "component": {
+        "availability": "Present as COMPNAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies COMPNAME.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 5 COMPNAME, representative line)",
+        "status": "verified"
+      },
+      "investigation_id": {
+        "availability": "NHTSA action number from field 1; exactly one shipped row per action number after collapsing the make/model lines for a PE; PE prefix is the population filter.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 1 NHTSA ACTION NUMBER)",
+        "status": "verified"
+      },
+      "make": {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MAKE.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 2 MAKE, representative line)",
+        "status": "verified"
+      },
+      "manufacturer": {
+        "availability": "Present as MFR_NAME on the opening record; empty values are retained as missing, not zero. When an action number spans multiple lines, the lexicographically first valid line supplies MFR_NAME.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 6 MFR_NAME, representative line)",
+        "status": "verified"
+      },
+      "model": {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MODEL; the field may contain a list.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 3 MODEL, representative line)",
+        "status": "verified"
+      },
+      "model_count": {
+        "availability": "Derived from MODEL across all valid lines of the PE; distinct non-empty names are split on comma or semicolon; delimiter interpretation is assumed.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 3 MODEL across the PE lines, derived)",
+        "status": "assumed"
+      },
+      "model_year": {
+        "availability": "Present as YEAR on the opening record; 9999 is unknown and excluded; values 1900 through 2019 retained. When an action number spans multiple lines, the lexicographically first valid line supplies YEAR.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 4 YEAR, representative line)",
+        "status": "verified"
+      },
+      "open_date": {
+        "availability": "ODATE field 7; event date used for chronological splits and conservative day clusters.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (field 7 ODATE)",
+        "status": "verified"
+      },
+      "vehicle_age": {
+        "availability": "Derived only from ODATE and the representative line YEAR at opening; negative ages are not clipped.",
+        "source": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt (fields 7 ODATE and 4 YEAR, derived)",
+        "status": "assumed"
+      }
+    },
+    "limitations": [
+      "Current-vintage retrospective snapshot: the 2026 ODI file may reflect later corrections and does not prove the fields were operationally available in real time during 1995-2019.",
+      "Multiple make/model lines sharing one NHTSA action number are collapsed to one row per PE; the deterministic representative line discards within-PE variation in make, model, model year, component, and manufacturer.",
+      "CAMPNO attribution is imperfect: one recall may be linked to multiple PEs or models, and a PE may be followed by an EA; using PE only reduces but does not eliminate shared-event dependence.",
+      "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0 under the frozen rule, which can understate escalation.",
+      "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+      "No production or sales exposure; recall propensity is not normalized by fleet size.",
+      "YEAR 9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped.",
+      "MODEL delimiter interpretation is assumed; if the source uses a different list separator, model_count may undercount or overcount.",
+      "No full-row availability ledger exists, so training_label_timing is unverified and feature availability is documented-field evidence plus explicit assumptions."
+    ],
+    "selection": {
+      "evidence": "ODATE is the PE open date; MAKE, MODEL, YEAR, COMPNAME, and MFR_NAME are opening-record fields. Multiple make/model lines for one action number are collapsed to a single PE row; the snapshot is retrospective and does not prove real-time availability.",
+      "kind": "prediction_time",
+      "rule": "Keep action numbers beginning with PE; parse ODATE as YYYYMMDD; keep 1995-01-01 through 2019-12-31; require non-empty MAKE and MODEL on at least one line; require YEAR 1900 through 2019; drop YEAR 9999 and unparseable ODATE; collapse remaining lines to one row per action number. Labels are not used for row selection."
+    },
+    "training_label_timing": "unverified",
+    "use": "retrospective_research",
+    "vintage": {
+      "evidence": "2026 NHTSA ODI flat files; later corrections may be reflected.",
+      "kind": "current_snapshot"
+    }
+  },
+  "event_key_column": "open_date",
+  "expected_duplicate_ids": 0,
+  "external_threshold": {
+    "source": "Frozen task 24-month outcome horizon",
+    "unit": "days",
+    "value": 730
+  },
+  "features": [
+    "make",
+    "model",
+    "model_year",
+    "component",
+    "manufacturer",
+    "model_count",
+    "vehicle_age"
+  ],
+  "features_documented_at": "prediction_time",
+  "high_cardinality_columns": [
+    "investigation_id",
+    "model",
+    "component",
+    "make",
+    "manufacturer",
+    "open_date"
+  ],
+  "id_columns": [
+    "investigation_id"
+  ],
+  "label_source_columns": [
+    "campno",
+    "rcdate",
+    "odate"
+  ],
+  "measurements": [
+    {
+      "column": "model_year",
+      "frame": "INV.txt field 4 YEAR of the deterministic representative line; 9999 treated as unknown and excluded by population",
+      "unit": "calendar year"
+    },
+    {
+      "column": "vehicle_age",
+      "frame": "ODATE calendar year minus the representative line MODEL YEAR",
+      "unit": "years"
+    },
+    {
+      "column": "model_count",
+      "frame": "distinct non-empty model names across all make/model lines of the PE, split on comma or semicolon",
+      "unit": "models"
+    },
+    {
+      "column": "recall_24m",
+      "frame": "linked RCDATE minus ODATE; campaign join on normalized CAMPNO values unioned across the PE lines",
+      "unit": "binary at 730 calendar days"
+    }
+  ],
+  "name": "nhtsa-pe-recall",
+  "positive_label": 1,
+  "post_hoc_columns": [
+    "campno",
+    "cdate",
+    "rcdate",
+    "summary"
+  ],
+  "split_windows": {
+    "eval": {
+      "end": "2015-01-01T00:00:00.000",
+      "start": "2008-01-01T00:00:00.000"
+    },
+    "holdout": {
+      "end": null,
+      "start": "2015-01-01T00:00:00.000"
+    },
+    "train": {
+      "end": "2008-01-01T00:00:00.000",
+      "start": null
+    }
+  },
+  "splits": {
+    "train": "public/train.csv",
+    "eval": "public/eval.csv",
+    "holdout": "private/holdout.csv"
+  },
+  "target": "recall_24m",
+  "task": {
+    "decision_user": "NHTSA Office of Defects Investigation manager allocating investigative resources at PE opening.",
+    "features": [
+      {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MAKE.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Vehicle make from the deterministic representative line of the PE (INV.txt field 2 MAKE).",
+        "name": "make"
+      },
+      {
+        "availability": "Present on the opening investigation record; when an action number spans multiple make/model lines, the lexicographically first valid line supplies MODEL; the field may contain a list.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Vehicle model or model list from the deterministic representative line of the PE (INV.txt field 3 MODEL).",
+        "name": "model"
+      },
+      {
+        "availability": "Present at opening; parsed as an integer; 9999 is unknown and excluded by the frozen population; values 1900 through 2019 are retained. The representative line supplies the year.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Model year of the representative vehicle line under investigation (INV.txt field 4 YEAR).",
+        "name": "model_year"
+      },
+      {
+        "availability": "Present at opening; empty values are retained as missing, not zero. The representative line supplies the component.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Component or system description from the deterministic representative line (INV.txt field 5 COMPNAME).",
+        "name": "component"
+      },
+      {
+        "availability": "Present at opening; empty values are retained as missing, not zero. The representative line supplies the manufacturer.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Manufacturer from the deterministic representative line of the PE (INV.txt field 6 MFR_NAME).",
+        "name": "manufacturer"
+      },
+      {
+        "availability": "Derived only from MODEL across the PE lines at opening; counts distinct non-empty names split on comma or semicolon; the delimiter interpretation is assumed.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Number of distinct model names across the PE make/model lines, a proxy for the breadth of the PE.",
+        "name": "model_count"
+      },
+      {
+        "availability": "Derived only from ODATE and the representative YEAR at opening; negative ages can occur for next-model-year vehicles and are not clipped.",
+        "evidence_url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt",
+        "meaning": "Open year minus the representative model year, a proxy for vehicle age at the probe.",
+        "name": "vehicle_age"
+      }
+    ],
+    "outcome_horizon": "24 months (730 days) from ODATE.",
+    "population": "PE investigations opened 1995-01-01 through 2019-12-31 with a parseable ODATE, non-empty MAKE and MODEL on at least one make/model line, and YEAR from 1900 through 2019; multiple lines sharing an action number are collapsed to one row per action number using the lexicographically first valid line and a model count across lines; excludes YEAR 9999 equipment, tire, and child-restraint records and rows without a parseable ODATE.",
+    "prediction_time": "The PE open date (ODATE), before investigation findings, closure, or a recall campaign number are known.",
+    "question": "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
+    "simple_references": "Majority class; manufacturer base rate; component base rate; model-year age-only; open-year base rate.",
+    "split_policy": "Chronological by ODATE: train 1995-01-01 through 2007-12-31; eval 2008-01-01 through 2014-12-31; holdout 2015-01-01 through 2019-12-31. One row per PE action number; no embargo; each row is a distinct PE and no feature uses another row's outcome. All 24-month label windows close by 2021-12-31, before the 2026 snapshot.",
+    "target": "1 if any CAMPNO value on the PE lines is non-empty and at least one linked recall campaign has an RCDATE after ODATE and on or before ODATE plus 730 days; 0 otherwise. CAMPNO, CDATE, status, and recall records are label-only.",
+    "title": "Will a newly opened NHTSA preliminary evaluation produce a safety recall within 24 months?",
+    "usefulness": "At opening, the recall outcome is unknown and CAMPNO is absent; the model must combine component, manufacturer, model-year, and probe breadth to forecast regulatory escalation. This supports triage and is not a copied field."
+  },
+  "threshold_seconds": 63072000,
+  "time_column": "open_date",
+  "timing": {
+    "assumptions": [
+      "No reporting-period schedule or publication lag is known for the ODI flat files; timing is event-time ODATE and historical real-time availability is unverified."
+    ],
+    "features": {
+      "period": null,
+      "published_days_after_period_end": null,
+      "source_kind": "administrative_record"
+    },
+    "observations": [],
+    "prediction_instant": {
+      "citation": "INV.txt field 7 ODATE is the date the investigation opened",
+      "days_after_period_end": null,
+      "kind": "event",
+      "period": null
+    },
+    "row_selection": {
+      "fields": [
+        "action_number",
+        "odate",
+        "make",
+        "model",
+        "year",
+        "campno"
+      ],
+      "latest_period_used": null,
+      "rule": "Keep action numbers beginning with PE; parse ODATE as YYYYMMDD; keep 1995-01-01 through 2019-12-31; require non-empty MAKE and MODEL on at least one line; require YEAR 1900 through 2019; drop YEAR 9999 and unparseable ODATE; collapse remaining make/model lines to one row per action number. No outcome conditioning."
+    }
+  },
+  "unit_validation": {
+    "checks": 3,
+    "mismatches": 0,
+    "source": "source-checks.json: unit checks",
+    "evidence_sha256": "9bbc899c1a888b3be261299c2140eca0f7bc8073c1cb6951fc90314cc0ea61f1"
+  },
+  "positive_events": {
+    "train": {
+      "positives": 247,
+      "distinct_events": 216
+    },
+    "eval": {
+      "positives": 152,
+      "distinct_events": 135
+    },
+    "holdout": {
+      "positives": 42,
+      "distinct_events": 38
+    }
+  },
+  "adversarial_battery": {
+    "version": "1.0.0",
+    "ok": true,
+    "input_digest": "079063c34d9a62440fff3ee7e0487523b6bd2978f76cf6333826ff230893e527",
+    "code": {
+      "artifact_scrub.py": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68",
+      "leakage_battery.py": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3",
+      "recovery_recipes.py": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "freeze_sha256": "02b5b834d634bc4e198d60009dbc586d3a7590d47a47b67eb157d2a5bc714156",
+    "all_results_sha256": "f9182405cb1f373cd183262c558a422e53f014e4a69e7c89161e32fb51f5f734",
+    "detail_files": {
+      "results-0000.jsonl": {
+        "sha256": "5df18d94e339f4d6635d8e9ec20eb9fbfcf8d16c8cf12dc75aa45d9c6e687d28",
+        "bytes": 134024
+      }
+    },
+    "exact": [],
+    "failures": [],
+    "flags": [
+      {
+        "name": "absolute:model",
+        "kind": "statistical",
+        "split": "eval",
+        "sha256": "dbd437170dbab72d5a5e190ea6c686e205ab51dfe64bc3ae7e5a5598bcd3b487",
+        "rows": 307,
+        "covered": 7,
+        "errors": null,
+        "auc_covered": 1.0,
+        "auc_full": 0.48406196943972835
+      },
+      {
+        "name": "lookup:component+model",
+        "kind": "supervised",
+        "split": "holdout",
+        "sha256": "b6155866ecb0172370e9115e480dd2cc0291998a0fe81913f8cffd04e7cbf9a1",
+        "rows": 88,
+        "covered": 4,
+        "errors": 0,
+        "auc_covered": 1.0,
+        "auc_full": 0.5437370600414079
+      },
+      {
+        "name": "lookup_unanimous:model+vehicle_age",
+        "kind": "supervised",
+        "split": "eval",
+        "sha256": "83263b40ba7ec90dd501918c3a9010a6cc17f9e3b90c2c6551b542c5d5b405f8",
+        "rows": 307,
+        "covered": 4,
+        "errors": 0,
+        "auc_covered": 1.0,
+        "auc_full": 0.5129032258064516
+      },
+      {
+        "name": "lookup_unanimous:model_count+model_year",
+        "kind": "supervised",
+        "split": "eval",
+        "sha256": "a42f5f78e8943182c7b103a8fa6a1c874ec9e700af0a9c54c4a3244a43f33d6b",
+        "rows": 307,
+        "covered": 8,
+        "errors": 0,
+        "auc_covered": 1.0,
+        "auc_full": 0.5257215619694398
+      },
+      {
+        "name": "numeric:model",
+        "kind": "statistical",
+        "split": "eval",
+        "sha256": "dbd437170dbab72d5a5e190ea6c686e205ab51dfe64bc3ae7e5a5598bcd3b487",
+        "rows": 307,
+        "covered": 7,
+        "errors": null,
+        "auc_covered": 1.0,
+        "auc_full": 0.48406196943972835
+      }
+    ],
+    "flag_count": 5,
+    "attempted": {
+      "statistical": 508,
+      "supervised": 180
+    },
+    "constant_or_uncovered": {
+      "statistical": 62,
+      "supervised": 85
+    },
+    "scope": {
+      "donors": [
+        "self",
+        "all"
+      ],
+      "exploratory_keys": 8,
+      "exploratory_operands": 8,
+      "max_columns": 128,
+      "scored_labels_read": false,
+      "tokens_per_column": 80,
+      "train_labels": "supervised controls only"
+    }
+  }
+}
