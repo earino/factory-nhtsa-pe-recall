@@ -15,6 +15,14 @@ configs:
     path: extract/private/holdout.csv
 ---
 
+<!-- dataset-factory:links -->
+**Dataset Factory · v-76d064ad7e164c41**
+
+[Dataset website](https://earino.github.io/factory-nhtsa-pe-recall/versions/v-76d064ad7e164c41/) · [GitHub release](https://github.com/earino/factory-nhtsa-pe-recall/releases/tag/v-76d064ad7e164c41) · [Hugging Face](https://huggingface.co/datasets/earino/factory-nhtsa-pe-recall/tree/v-76d064ad7e164c41) · [Catalogue](https://earino.github.io/dataset-factory-site/)
+
+Artifact: 7119c52b6fe5171677a06aebffca01b29a9960e1d0534755b8126137bbcf82ef
+<!-- /dataset-factory:links -->
+
 # Will a newly opened NHTSA preliminary evaluation produce a safety recall within 24 months?
 
 Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?
