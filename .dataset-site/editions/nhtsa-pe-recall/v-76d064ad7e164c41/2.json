@@ -1,0 +1,310 @@
+{
+  "artifact_version": "7119c52b6fe5171677a06aebffca01b29a9960e1d0534755b8126137bbcf82ef",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "bytes": 675,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/LICENSE-EVIDENCE.json",
+      "hf_path": "LICENSE-EVIDENCE.json",
+      "sha256": "ce4e625ff789cb84be0402e7a8aa885defd9099c7417dc6fecd33cbc2ea7459d"
+    },
+    "LICENSE.md": {
+      "bytes": 866,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/LICENSE.md",
+      "hf_path": "LICENSE.md",
+      "sha256": "4c4b6f7c8022255c051abf7db10cd6d13066aff62fd190e2cb7c2c282a3707d9"
+    },
+    "README.md": {
+      "bytes": 4233,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/README.md",
+      "hf_path": "README.md",
+      "sha256": "93a9b83cba91b0a3b4fe56f0a3c82ac3ecb56064d5f4fa4cd6e91a2910274c02"
+    },
+    "SOURCES.json": {
+      "bytes": 1389,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/SOURCES.json",
+      "hf_path": "SOURCES.json",
+      "sha256": "d2c9fc9b1d11613d4d0620e5b8d6952fa19f1c2d5a17dc314f2dd1ce2cddb0f4"
+    },
+    "evaluation.json": {
+      "bytes": 3972,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/evaluation.json",
+      "hf_path": "evaluation.json",
+      "sha256": "ed8fcb37b383323a347701eb232df52f46bf2bfba5fdc1159b3c64c89015d3b2"
+    },
+    "extract__meta.json": {
+      "bytes": 1260,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/extract__meta.json",
+      "hf_path": "extract/meta.json",
+      "sha256": "c068d9fdb21af3d22b0bce6ae815d57a3e5788afed90c942202e905180ca0f5b"
+    },
+    "extract__private__holdout.csv": {
+      "bytes": 8107,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/extract__private__holdout.csv",
+      "hf_path": "extract/private/holdout.csv",
+      "sha256": "93ca7bfbf095099c642d34471eda0be742b7f928eed74d080be6e5429ffc804d"
+    },
+    "extract__public__eval.csv": {
+      "bytes": 30634,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/extract__public__eval.csv",
+      "hf_path": "extract/public/eval.csv",
+      "sha256": "fdf29ddc574057c2d14efe13c4f62dc67a151cb339452f1888467d40e96860ca"
+    },
+    "extract__public__train.csv": {
+      "bytes": 71583,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/extract__public__train.csv",
+      "hf_path": "extract/public/train.csv",
+      "sha256": "02390d2b80d997e73b1e1e258e8c2f72d52df06fc7c31ca0d60ce916e2f00970"
+    },
+    "extract__quality.json": {
+      "bytes": 17759,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/extract__quality.json",
+      "hf_path": "extract/quality.json",
+      "sha256": "e0f9b8fbed4591387fff37f3a397df4783fc3c347bbde700f263b282cdd38479"
+    },
+    "get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/get_dataset.py",
+      "hf_path": "get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "qualification.json": {
+      "bytes": 18901,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/qualification.json",
+      "hf_path": "qualification.json",
+      "sha256": "77a52242a6ce43fdc44b125b536e8afd53182223836b20da848be34ea7f1dc38"
+    },
+    "reproduction__LICENSE-CC0-1.0.txt": {
+      "bytes": 7048,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__LICENSE-CC0-1.0.txt",
+      "hf_path": "reproduction/LICENSE-CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "reproduction__LICENSE-MIT.txt": {
+      "bytes": 1124,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__LICENSE-MIT.txt",
+      "hf_path": "reproduction/LICENSE-MIT.txt",
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c"
+    },
+    "reproduction__artifact_scrub.py": {
+      "bytes": 11369,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__artifact_scrub.py",
+      "hf_path": "reproduction/artifact_scrub.py",
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68"
+    },
+    "reproduction__build.py": {
+      "bytes": 15122,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__build.py",
+      "hf_path": "reproduction/build.py",
+      "sha256": "d662fc58fa051edd80cf641a9a76933bca875ac4b5e0dadef76a386394b26948"
+    },
+    "reproduction__construction.json": {
+      "bytes": 17474,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__construction.json",
+      "hf_path": "reproduction/construction.json",
+      "sha256": "b51ddfbe87d13a30aabf7a515b7bf1c27e1130cc65a3d55108a04613b19cd003"
+    },
+    "reproduction__dataset_package.py": {
+      "bytes": 7927,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__dataset_package.py",
+      "hf_path": "reproduction/dataset_package.py",
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327"
+    },
+    "reproduction__dataset_run.py": {
+      "bytes": 12381,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__dataset_run.py",
+      "hf_path": "reproduction/dataset_run.py",
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57"
+    },
+    "reproduction__get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__get_dataset.py",
+      "hf_path": "reproduction/get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "reproduction__leakage_battery.py": {
+      "bytes": 17379,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__leakage_battery.py",
+      "hf_path": "reproduction/leakage_battery.py",
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3"
+    },
+    "reproduction__provenance.json": {
+      "bytes": 573,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__provenance.json",
+      "hf_path": "reproduction/provenance.json",
+      "sha256": "768bebe8c4b2a024625465fb8453c587e61691707251168963ed7f1851a9b476"
+    },
+    "reproduction__qualify_dataset.py": {
+      "bytes": 66067,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__qualify_dataset.py",
+      "hf_path": "reproduction/qualify_dataset.py",
+      "sha256": "bff6d43d0904182e2612c32bab702e41addbf389904a236c209e78be39e37a6b"
+    },
+    "reproduction__recovery_recipes.py": {
+      "bytes": 17609,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__recovery_recipes.py",
+      "hf_path": "reproduction/recovery_recipes.py",
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "reproduction__requirements.txt": {
+      "bytes": 160,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__requirements.txt",
+      "hf_path": "reproduction/requirements.txt",
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0"
+    },
+    "reproduction__source.json": {
+      "bytes": 10751,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__source.json",
+      "hf_path": "reproduction/source.json",
+      "sha256": "c0896d7594b232d2b61be922e6b223491fcaf6ee497892faa80c4ab299b5be46"
+    },
+    "reproduction__source_io.py": {
+      "bytes": 5607,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__source_io.py",
+      "hf_path": "reproduction/source_io.py",
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3"
+    },
+    "reproduction__train.py": {
+      "bytes": 2500,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__train.py",
+      "hf_path": "reproduction/train.py",
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8"
+    },
+    "reproduction__validate.py": {
+      "bytes": 1277,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__validate.py",
+      "hf_path": "reproduction/validate.py",
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b"
+    },
+    "reproduction__validate.sh": {
+      "bytes": 482,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/reproduction__validate.sh",
+      "hf_path": "reproduction/validate.sh",
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+    },
+    "source-checks.json": {
+      "bytes": 6154,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/source-checks.json",
+      "hf_path": "source-checks.json",
+      "sha256": "9bbc899c1a888b3be261299c2140eca0f7bc8073c1cb6951fc90314cc0ea61f1"
+    },
+    "source-snapshot.tar.gz": {
+      "bytes": 23689483,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/source-snapshot.tar.gz",
+      "hf_path": "source-snapshot.tar.gz",
+      "sha256": "c00bb26d6f46694d6e396bb44a4cb1bcb80bffcdc6d53f02575ce6e1751035f4"
+    },
+    "verify_dataset.py": {
+      "bytes": 1276,
+      "download": "https://github.com/earino/factory-nhtsa-pe-recall/releases/download/v-76d064ad7e164c41/verify_dataset.py",
+      "hf_path": "verify_dataset.py",
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834"
+    }
+  },
+  "baseline": {
+    "metrics": {
+      "Validation calendar_identity auc": 0.5046264855687607,
+      "Validation calendar_identity brier": 0.28067643525720437,
+      "Validation full_model auc": 0.6195033955857386,
+      "Validation full_model brier": 0.25882025409720283,
+      "Validation majority_prior auc": 0.5,
+      "Validation majority_prior brier": 0.27862388536640176
+    },
+    "scope": "Existing unmodified runner baseline on public validation only; no holdout scoring"
+  },
+  "configs": [],
+  "dataset": "nhtsa-pe-recall",
+  "documents": [
+    [
+      "README.md",
+      "Loading and reproduction"
+    ],
+    [
+      "evaluation.json",
+      "Measured baseline"
+    ],
+    [
+      "LICENSE.md",
+      "Licence and attribution"
+    ]
+  ],
+  "domain": "National Highway Traffic Safety Administration (NHTSA)",
+  "evaluation_use": "retrospective_research",
+  "github_repository": "earino/factory-nhtsa-pe-recall",
+  "hf_repository": "earino/factory-nhtsa-pe-recall",
+  "licenses": {
+    "attribution": "National Highway Traffic Safety Administration",
+    "citation": "",
+    "code": "MIT",
+    "compilation_scope": "Our additional compilation rights only; upstream terms remain in force.",
+    "data_compilation": "CC0-1.0",
+    "source_data": "Public Domain U.S. Government"
+  },
+  "limitations": [
+    "Current-vintage retrospective snapshot: the 2026 ODI file may reflect later corrections and does not prove the fields were operationally available in real time during 1995-2019.",
+    "CAMPNO attribution is imperfect: one recall may be linked to multiple PEs or models, and a PE may be followed by an EA; using PE only reduces but does not eliminate shared-event dependence.",
+    "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0, which can understate escalation.",
+    "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. § 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+    "No production or sales exposure; recall propensity is not normalized by fleet size.",
+    "YEAR=9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped.",
+    "Multiple make/model lines sharing one NHTSA action number are collapsed to one row per PE; the deterministic representative line discards within-PE variation in make, model, model year, component, and manufacturer.",
+    "Recall timing uses RCDATE from the recall file; if CAMPNO is present but unmatched or RCDATE is missing, the row is labeled 0 under the frozen rule, which can understate escalation.",
+    "Territorial limit: Public Domain U.S. Government status rests on 17 U.S.C. 105 and does not establish worldwide public domain; manufacturer names and trademarks remain third-party.",
+    "YEAR 9999 is used to exclude equipment, tire, and child-restraint records, but some vehicle PEs with unknown model years are dropped.",
+    "MODEL delimiter interpretation is assumed; if the source uses a different list separator, model_count may undercount or overcount.",
+    "No full-row availability ledger exists, so training_label_timing is unverified and feature availability is documented-field evidence plus explicit assumptions.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "post": {
+    "paragraphs": [
+      "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
+      "Population: PE investigations opened 1995-01-01 through 2019-12-31 with a parseable ODATE, non-empty MAKE and MODEL on at least one make/model line, and YEAR from 1900 through 2019; multiple lines sharing an action number are collapsed to one row per action number using the lexicographically first valid line and a model count across lines; excludes YEAR 9999 equipment, tire, and child-restraint records and rows without a parseable ODATE.",
+      "Target: 1 if the PE record's CAMPNO is non-empty and the linked recall's RCDATE is after ODATE and on or before ODATE + 730 days; 0 otherwise. CAMPNO, CDATE, status, and recall records are label-only and excluded from features.",
+      "Prediction time: The PE open date (ODATE), before investigation findings, closure, or a recall campaign number are known.",
+      "Splits: Chronological by ODATE: train 1995-01-01 to 2007-12-31; eval 2008-01-01 to 2014-12-31; holdout 2015-01-01 to 2019-12-31. No embargo; each row is a distinct PE and no feature uses another row's outcome. All 24-month label windows close by 2021-12-31, before the 2026 snapshot.",
+      "Outcome horizon: 24 months (730 days) from ODATE.",
+      "Inputs: make: Vehicle make from the deterministic representative line of the PE (INV.txt field 2 MAKE).; model: Vehicle model or model list from the deterministic representative line of the PE (INV.txt field 3 MODEL).; model_year: Model year of the representative vehicle line under investigation (INV.txt field 4 YEAR).; component: Component or system description from the deterministic representative line (INV.txt field 5 COMPNAME).; manufacturer: Manufacturer from the deterministic representative line of the PE (INV.txt field 6 MFR_NAME).; model_count: Number of distinct model names across the PE make/model lines, a proxy for the breadth of the PE.; vehicle_age: Open year minus the representative model year, a proxy for vehicle age at the probe."
+    ],
+    "title": "NHTSA Pe Recall"
+  },
+  "publication_commits": {
+    "github": "0ddf4b1d4c5b4db70bcabbea37fe69b50f2b2d69",
+    "huggingface": "da922261c534ecfa793144191b25b698974145e7"
+  },
+  "qualification": {
+    "gate_version": "1.6.1",
+    "result": "PASSED"
+  },
+  "record_sha256": "0f1c6c205a68dbc040fe461f833b7dfd25b26da9f03e21041f6d79a91cb8b511",
+  "release_date": "2026-11-09",
+  "release_schema": "factory-1",
+  "release_tag": "v-76d064ad7e164c41",
+  "schema_version": 1,
+  "site_revision": 2,
+  "source": {
+    "name": "National Highway Traffic Safety Administration (NHTSA)",
+    "url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt"
+  },
+  "splits": {
+    "eval": {
+      "rows": 307
+    },
+    "holdout": {
+      "rows": 88
+    },
+    "train": {
+      "rows": 758
+    }
+  },
+  "summary": "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
+  "task_type": "binary-classification",
+  "title": "NHTSA Pe Recall",
+  "urls": {
+    "catalog": "https://earino.github.io/dataset-factory-site/",
+    "github": "https://github.com/earino/factory-nhtsa-pe-recall",
+    "github_release": "https://github.com/earino/factory-nhtsa-pe-recall/releases/tag/v-76d064ad7e164c41",
+    "huggingface": "https://huggingface.co/datasets/earino/factory-nhtsa-pe-recall",
+    "huggingface_version": "https://huggingface.co/datasets/earino/factory-nhtsa-pe-recall/tree/v-76d064ad7e164c41",
+    "version": "https://earino.github.io/factory-nhtsa-pe-recall/versions/v-76d064ad7e164c41/",
+    "website": "https://earino.github.io/factory-nhtsa-pe-recall/"
+  }
+}

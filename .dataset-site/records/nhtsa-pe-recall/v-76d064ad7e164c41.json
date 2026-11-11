@@ -264,7 +264,7 @@
       "Outcome horizon: 24 months (730 days) from ODATE.",
       "Inputs: make: Vehicle make from the deterministic representative line of the PE (INV.txt field 2 MAKE).; model: Vehicle model or model list from the deterministic representative line of the PE (INV.txt field 3 MODEL).; model_year: Model year of the representative vehicle line under investigation (INV.txt field 4 YEAR).; component: Component or system description from the deterministic representative line (INV.txt field 5 COMPNAME).; manufacturer: Manufacturer from the deterministic representative line of the PE (INV.txt field 6 MFR_NAME).; model_count: Number of distinct model names across the PE make/model lines, a proxy for the breadth of the PE.; vehicle_age: Open year minus the representative model year, a proxy for vehicle age at the probe."
     ],
-    "title": "Will a newly opened NHTSA preliminary evaluation produce a safety recall within 24 months?"
+    "title": "NHTSA Pe Recall"
   },
   "publication_commits": {
     "github": "0ddf4b1d4c5b4db70bcabbea37fe69b50f2b2d69",
@@ -274,12 +274,12 @@
     "gate_version": "1.6.1",
     "result": "PASSED"
   },
-  "record_sha256": "34024108ffc43b853f4e2693b2d966179dda246621c1f460f8cfa783fade4141",
+  "record_sha256": "0f1c6c205a68dbc040fe461f833b7dfd25b26da9f03e21041f6d79a91cb8b511",
   "release_date": "2026-11-09",
   "release_schema": "factory-1",
   "release_tag": "v-76d064ad7e164c41",
   "schema_version": 1,
-  "site_revision": 1,
+  "site_revision": 2,
   "source": {
     "name": "National Highway Traffic Safety Administration (NHTSA)",
     "url": "https://static.nhtsa.gov/odi/ffdd/inv/INV.txt"
@@ -297,7 +297,7 @@
   },
   "summary": "Will a newly opened NHTSA preliminary evaluation (PE) into a vehicle defect result in a linked safety recall campaign within 24 months?",
   "task_type": "binary-classification",
-  "title": "Will a newly opened NHTSA preliminary evaluation produce a safety recall within 24 months?",
+  "title": "NHTSA Pe Recall",
   "urls": {
     "catalog": "https://earino.github.io/dataset-factory-site/",
     "github": "https://github.com/earino/factory-nhtsa-pe-recall",
